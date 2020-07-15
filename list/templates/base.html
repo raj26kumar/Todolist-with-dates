@@ -10,30 +10,31 @@
 
     <title>wishlists</title>
   </head>
-  <body>
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-   <div class = "container">
-  <a class="navbar-brand" href="{% url 'home' %}">Make A List Of Things</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+  <body style='background:#f2f2f2'>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class = "container">
+        <a class="navbar-brand" href="{% url 'home' %}">Make A List Of Things</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     
-    <form class="form-inline my-2 my-lg-0" method = 'POST'>
-        {% csrf_token %}
-      <input class="form-control mr-sm-2" type="search" placeholder="Type here" name='item'>
-      <input class="form-control mr-sm-2" type="date" placeholder="deadline" name='date'>
-      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Add</button>
-    </form>
-    </div>
-  </div>
-</nav>
-    <br/>
-    <div class="container">
+      <form class="form-inline my-2 my-lg-0" method = 'POST'>
+          {% csrf_token %}
+          <input class="form-control mr-sm-2" type="search" placeholder="Type here" name='item'>
+          <a>Deadline<input class="form-control mr-sm-2" type="date" placeholder="deadline" name='date'></a>
+          <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Add To The List</button>
+      </form>
+      </div>
+      </div>
+    </nav>
+      <br/>
+      <div class="container">
         {% block heading %}
         {% endblock %}
-    </div>
+      </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
